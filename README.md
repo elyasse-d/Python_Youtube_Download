@@ -1,16 +1,22 @@
 # Python3_Youtube_Downloader
 
-Requirement for Dev: 
-Python3 \n
+## Requirement for Dev: 
+Python3 
 ```bash
-apt install python3\n
+apt install python3
 ```
-Pytube lib\n
+Pytube lib
 ```bash
-pip3 install pytube\n
+pip3 install pytube
 ```
-Tkinter lib\n
+Tkinter lib
 
 ```bash
 apt install tkinter\n
 ```
+## Use
+<img src="https://i.ibb.co/vwDrNKW/a1.png" alt="a1" border="0">
+> 1. insert Youtube URL 
+> 2.Choose File Destenation
+> 3.Click on Video
+
