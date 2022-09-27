@@ -16,7 +16,7 @@ apt install tkinter\n
 ```
 ## Use
 <img src="https://i.ibb.co/vwDrNKW/a1.png" alt="a1" border="0">
-1. insert Youtube URL 
-2.Choose File Destenation
-3.Click on Video
+1. insert Youtube URL <br>
+2.Choose File Destenation <br>
+3.Click on Video <br>
 
