@@ -28,8 +28,18 @@ def download_vid():
         Label(root, text = 'CONNECTION ERROR', font = 'arial 15').place(x= 180 , y = 120)
         
     resString = resolution.get()
-    yt.streams.filter(res=resString).first().download(str(my_path.get()))
+    yt.streams.filter(res=resString,file_extension='mp4').first().download(str(my_path.get()))
     Label(root, text = 'DOWNLOADED :'+resString, font = 'arial 15').place(x= 180 , y = 140)  
+def download_audio():
+    yt = YouTube(str(url.get()))
+    try:
+        yt = YouTube(str(url.get()))
+    except:
+        Label(root, text = 'CONNECTION ERROR', font = 'arial 15').place(x= 180 , y = 120)
+        
+    res_adu_String = resolution_audio.get()
+    yt.streams.filter(abr=res_adu_String,only_audio=True).first().download(str(my_path.get()))
+    Label(root, text = 'DOWNLOADED :'+res_adu_String, font = 'arial 15').place(x= 180 , y = 140)  
 
 def open_File():
     return filedialog.askdirectory()
@@ -53,7 +63,7 @@ bt_path = Button(root,command=Get_val, text = "Browse",activebackground = "light
 
 #Video Or Audio Botton
 bt_vid = Button(root,command=download_vid, text = "Video",activebackground = "light blue", activeforeground = "blue",width=30).place(x = 140, y = 90)
-bt_aud = Button(root, text = "Audio mp4",activebackground = "light blue", activeforeground = "blue",width=30).place(x = 380, y = 90)
+bt_aud = Button(root,command=download_audio, text = "Audio mp4",activebackground = "light blue", activeforeground = "blue",width=30).place(x = 380, y = 90)
 
 
 #Resolution output for Video
@@ -64,7 +74,12 @@ menu_resol = OptionMenu(root,resolution , *RES_list)
 menu_resol.pack()
 menu_resol.place(x =580, y =30)
 #Resolution output for Audio
-
+RES_audio_list=["160kbps","128kbps","70kbps"]#list of resoliton
+resolution_audio = StringVar(root)
+resolution_audio.set(RES_audio_list[0])
+menu_audio_resol = OptionMenu(root,resolution_audio , *RES_audio_list)
+menu_audio_resol.pack()
+menu_audio_resol.place(x =590, y =10)
 
 
 
