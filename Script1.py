@@ -1,13 +1,7 @@
-from argparse import FileType
-from cgitb import text
-from distutils.cmd import Command
-from importlib.resources import path
 from tkinter import *
 from tkinter import filedialog, messagebox
-import os,fnmatch
 from tkinter.filedialog import FileDialog, askopenfile
 from pytube import YouTube
-from functools import partial  
 root = Tk()
 
 #author: Elyasse-d
@@ -62,16 +56,14 @@ bt_vid = Button(root,command=download_vid, text = "Video",activebackground = "li
 bt_aud = Button(root, text = "Audio mp4",activebackground = "light blue", activeforeground = "blue",width=30).place(x = 380, y = 90)
 
 
-
-#option resolutio
-
-#Resolution output command=func 
+#Resolution output for Video
 RES_list=["720p","480p","360p","144p"]#list of resoliton
 resolution = StringVar(root)
 resolution.set(RES_list[1])
 menu_resol = OptionMenu(root,resolution , *RES_list)
 menu_resol.pack()
 menu_resol.place(x =580, y =30)
+#Resolution output for Audio
 
 
 
